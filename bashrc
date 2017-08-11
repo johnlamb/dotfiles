@@ -21,7 +21,7 @@ function git_color {
     if [[ "$STATUS" == *'Not a git repository'* ]]
         then echo ""
     else
-    if [[ "$STATUS" != *'working tree clean'* ]]
+    if [[ "$STATUS" != *'working tree clean'* ]] && [[ "$STATUS" != *'working directory clean'* ]]
         then
         # red if need to commit
         echo -e '\033[0;31m'
