@@ -50,16 +50,16 @@ function git_color {
     if [[ "$STATUS" == *'Not a git repository'* ]]
         then echo ""
     else
-    if [[ "$STATUS" == *'Your branch is ahead'* ]]
-        then
-        # yellow if need to push
-        echo -e "\033[0;33m"
-    else
     if [[ "$STATUS" != *'working tree clean'* ]] && [[ "$STATUS" != *'working directory clean'* ]]
         then
         # red if need to commit
         echo -e "\033[0;31m"
     else
+    if [[ "$STATUS" == *'Your branch is ahead'* ]]
+        then
+        # yellow if need to push
+        echo -e "\033[0;33m"
+   else
         # else cyan
         echo -e "\033[0;32m"
     fi
