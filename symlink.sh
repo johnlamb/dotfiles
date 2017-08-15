@@ -10,3 +10,4 @@ else
 fi
 
 ln -sf $dir/vimrc ~/.vimrc
+ln -sf $dir/tmux.conf ~/.tmux.conf
