@@ -1,5 +1,7 @@
 set nocompatible
 filetype plugin indent on
+set splitright
+set splitbelow
 let mapleader = ','
 syntax enable
 set statusline=\ %f%m%r%h%w\ %=%({%{&ff}\|%{(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\")}%k\|%Y}%)\ %([%l,%v][%p%%]\ %)
