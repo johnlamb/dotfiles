@@ -38,7 +38,7 @@ alias sshalok="ssh -R 52698:localhost:52698 -L 8888:localhost:8888 johnlamb@alok
 alias crep="grep --color=always"
 getgit() { git clone http://github.com/$1.git ;}
 note() { echo "$@" >> ~/notes ;}
-git_branch () {
+function git_branch () {
     if git rev-parse --git-dir >/dev/null 2>&1
         then echo -e "" [$(git branch 2>/dev/null| sed -n '/^\*/s/^\* //p')]
     else
