@@ -6,10 +6,16 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-vinegar'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'tpope/vim-fugitive'
+"Plugin 'lervag/vimtex'
+
 call vundle#end()
 
 filetype plugin indent on
 set clipboard=unnamedplus
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 set splitright
 set splitbelow
 let mapleader = ','
