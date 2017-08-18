@@ -33,7 +33,7 @@ set laststatus=2
 set encoding=utf-8
 set nu
 set relativenumber
-set background=dark
+"set background=dark
 " Enable folding
 "set foldmethod=indent
 "set foldlevel=99
@@ -49,5 +49,4 @@ au BufNewFile, BufRead *.py
     \ set autoindent
     \ set fileformat=unix
 colorscheme solarized
-
 map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR> 
