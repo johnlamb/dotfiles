@@ -11,16 +11,12 @@ Plugin 'tpope/vim-fugitive'
 call vundle#end()
 
 filetype plugin indent on
-<<<<<<< HEAD
 if system('uname -s') == "Darwin\n"
   set clipboard=unnamed "OSX
 else
   set clipboard=unnamedplus "Linux
 endif
-=======
-set clipboard=unnamedplus
 colorscheme solarized
->>>>>>> da9d06a0a439d8e65581e8803b561a6813d4d5c8
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
