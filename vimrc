@@ -11,11 +11,16 @@ Plugin 'tpope/vim-fugitive'
 call vundle#end()
 
 filetype plugin indent on
+<<<<<<< HEAD
 if system('uname -s') == "Darwin\n"
   set clipboard=unnamed "OSX
 else
   set clipboard=unnamedplus "Linux
 endif
+=======
+set clipboard=unnamedplus
+colorscheme solarized
+>>>>>>> da9d06a0a439d8e65581e8803b561a6813d4d5c8
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
@@ -24,7 +29,7 @@ set splitright
 set splitbelow
 let mapleader = ','
 syntax enable
-"set statusline=\ %f%m%r%h%w\ %=%({%{&ff}\|%{(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\")}%k\|%Y}%)\ %([%l,%v][%p%%]\ %)
+set statusline=\ %f%m%r%h%w\ %=%({%{&ff}\|%{(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\")}%k\|%Y}%)\ %([%l,%v][%p%%]\ %)
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -37,7 +42,7 @@ set laststatus=2
 set encoding=utf-8
 set nu
 set relativenumber
-"set background=dark
+set background=dark
 " Enable folding
 "set foldmethod=indent
 "set foldlevel=99
@@ -52,5 +57,4 @@ au BufNewFile, BufRead *.py
     \ set expandtab
     \ set autoindent
     \ set fileformat=unix
-colorscheme solarized
 map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR> 
