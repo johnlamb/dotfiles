@@ -39,6 +39,7 @@ set laststatus=2
 set encoding=utf-8
 set nu
 set relativenumber
+set wildmenu
 "set background=dark
 " Enable folding
 "set foldmethod=indent
