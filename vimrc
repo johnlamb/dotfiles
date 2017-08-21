@@ -39,7 +39,7 @@ set laststatus=2
 set encoding=utf-8
 set nu
 set relativenumber
-set background=dark
+"set background=dark
 " Enable folding
 "set foldmethod=indent
 "set foldlevel=99
