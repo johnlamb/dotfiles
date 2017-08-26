@@ -95,6 +95,4 @@ export PS1="${RED}[${YELLOW}\u${GREEN}@${BLUE}\h ${MAGENTA}\W${RED}]\[\$(git_col
 #set keymap vi-command
 
 # export PS1='\e[0;32m\h: \e[m\e[0;33m\w\e[m\n\$ '
- 
-
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+source ~/.iterm2_shell_integration.`basename $SHELL` 
