@@ -13,6 +13,7 @@ HISTFILESIZE=2000
 
 
 shopt -s checkwinsize
+shopt -s autocd
  if [ "$(uname)" == "Darwin" ]; then
 	 alias ls="ls -G"
 	export CLICOLOR=1
