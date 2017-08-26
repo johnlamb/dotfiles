@@ -40,6 +40,7 @@ set encoding=utf-8
 set nu
 set relativenumber
 set wildmenu
+set so=10
 "set background=dark
 " Enable folding
 "set foldmethod=indent
