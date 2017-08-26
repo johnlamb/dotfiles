@@ -88,7 +88,7 @@ RESET="\[\033[0m\]"
 BOLD="\[\033[1m\]"
 #export PS1='\[$(tput bold)\]\e[0;31m[\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 5)\]\W\[$(tput setaf 1)\]]\[$(git_color)\]$(git_branch)\[\033[m\]\e[0;33m\\$ \[$(tput sgr0)\]'
 #export PS1='\[\033[0;34m\]\W/\[$(git_color)\]$(git_branch)\[\033[m\] \[\033[0;35m\]:\[\033[m\] '
-export PS1="${RED}[${YELLOW}\u${GREEN}@${BLUE}\h ${MAGENTA}\W${RED}]\[\$(git_color)\]\$(git_branch)${YELLOW}$ ${RESET}"
+export PS1="${RED}[${YELLOW}\u${GREEN}@${BLUE}\h ${MAGENTA}\W${RED}]\[\$(git_color)\]\$(git_branch)${WHITE}$ ${RESET}"
 #export PS1='\[$(git_color)\]$(git_branch)\[\033[m\]' 
 #set editing-mode vi
 #set keymap vi-command
