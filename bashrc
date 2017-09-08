@@ -1,5 +1,5 @@
-export LC_ALL=en_GB.UTF-8
-export LANG=en_GB.UTF-8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 export TERM=xterm-256color
  #export PS1='\e[0;32m\h: \e[m\e[0;33m\w\e[m\n\$ '
  
