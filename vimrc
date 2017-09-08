@@ -6,6 +6,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-vinegar'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'tpope/vim-fugitive'
+Plugin 'davidhalter/jedi-vim'
 "Plugin 'lervag/vimtex'
 
 call vundle#end()
