@@ -25,23 +25,35 @@ nnoremap <C-H> <C-W><C-H>
 set splitright
 set splitbelow
 let mapleader = ','
-syntax enable
-set statusline=\ %f%m%r%h%w\ %=%({%{&ff}\|%{(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\")}%k\|%Y}%)\ %([%l,%v][%p%%]\ %)
+set statusline=\ %f\ Line:%l/%L\ (%p%%)\ Col:%v\ Buf:#%n%m%r%h%w\ 
+  \%=%({%{&ff}\|%{(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ 
+  \&bomb)?\",B\":\"\")}%k\|%Y}%)\ %([%l,%v][%p%%]\ %)
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:jedi#smart_auto_mappings = 0
+syntax enable
+set autoindent
+set smartindent
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set backspace=2
 set laststatus=2
 set encoding=utf-8
 set nu
 set relativenumber
 set wildmenu
 set so=10
+set hlsearch
+if exists('+colorcolumn')
+  highlight ColorColumn ctermbg=red
+	set colorcolumn=80
+endif
 "set background=dark
 " Enable folding
 "set foldmethod=indent
