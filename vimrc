@@ -22,6 +22,8 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+" Make double <ESC> clear search highlights
+nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
 set splitright
 set splitbelow
 let mapleader = ','
@@ -36,6 +38,8 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:jedi#smart_auto_mappings = 0
+let g:jedi#popup_on_dot = 0
+let g:jedi#show_call_signatures = 0
 syntax enable
 set autoindent
 set smartindent
@@ -51,8 +55,10 @@ set wildmenu
 set so=10
 set hlsearch
 if exists('+colorcolumn')
-  highlight ColorColumn ctermbg=red
-	set colorcolumn=80
+  highligh OverLength ctermbg=red ctermfg=white
+  match OverLength /\%81v.\+/
+  "highlight ColorColumn ctermbg=red
+	"set colorcolumn=80
 endif
 "set background=dark
 " Enable folding
@@ -65,8 +71,10 @@ au BufNewFile, BufRead *.py
     \ set tabstop=4
     \ set softtabstop=4
     \ set shiftwidth=4
-    \ set textwidth=79
+    \ set textwidth=80
     \ set expandtab
+    \ set smartindent
+    \ set smarttab
     \ set autoindent
     \ set fileformat=unix
 map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR> 
