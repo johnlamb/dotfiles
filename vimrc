@@ -7,6 +7,7 @@ Plugin 'tpope/vim-vinegar'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'tpope/vim-fugitive'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'xuhdev/vim-latex-live-preview'
 "Plugin 'lervag/vimtex'
 Plugin 'vim-latex/vim-latex'
 
