@@ -63,7 +63,7 @@ if exists('+colorcolumn')
   "highlight ColorColumn ctermbg=red
 	set colorcolumn=80
 endif
-"set background=dark
+set background=dark
 " Enable folding
 "set foldmethod=indent
 "set foldlevel=99
