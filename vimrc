@@ -4,10 +4,10 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-vinegar'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'tpope/vim-fugitive'
+"Plugin 'vim-syntastic/syntastic'
+"Plugin 'tpope/vim-fugitive'
 Plugin 'davidhalter/jedi-vim'
-Plugin 'xuhdev/vim-latex-live-preview'
+"Plugin 'xuhdev/vim-latex-live-preview'
 "Plugin 'lervag/vimtex'
 
 call vundle#end()
@@ -32,12 +32,12 @@ set statusline=\ %f\ Line:%l/%L\ (%p%%)\ Col:%v\ Buf:#%n%m%r%h%w\
   \%=%({%{&ff}\|%{(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ 
   \&bomb)?\",B\":\"\")}%k\|%Y}%)\ %([%l,%v][%p%%]\ %)
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
 let g:jedi#smart_auto_mappings = 0
 let g:jedi#popup_on_dot = 0
 let g:jedi#show_call_signatures = 0
