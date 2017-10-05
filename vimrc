@@ -54,6 +54,10 @@ set encoding=utf-8
 set nu
 set relativenumber
 set wildmenu
+" Don't offer to open certain files/directories
+set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png,*.ico
+set wildignore+=*.pdf,*.psd
+set wildignore+=node_modules/*,bower_components/*
 set so=10
 set hlsearch
 if exists('+colorcolumn')
