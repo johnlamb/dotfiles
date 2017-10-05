@@ -9,6 +9,7 @@ Plugin 'tpope/vim-vinegar'
 Plugin 'davidhalter/jedi-vim'
 "Plugin 'xuhdev/vim-latex-live-preview'
 "Plugin 'lervag/vimtex'
+Plugin 'vim-latex/vim-latex'
 
 call vundle#end()
 
@@ -57,11 +58,12 @@ set so=10
 set hlsearch
 if exists('+colorcolumn')
   highligh OverLength ctermbg=red ctermfg=white
-  match OverLength /\%81v.\+/
+  "match OverLength /\%81v.\+/
+  match OverLength /\%81v/
   "highlight ColorColumn ctermbg=red
-	"set colorcolumn=80
+	set colorcolumn=80
 endif
-"set background=dark
+set background=dark
 " Enable folding
 "set foldmethod=indent
 "set foldlevel=99
