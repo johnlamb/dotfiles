@@ -9,7 +9,7 @@ Plugin 'tpope/vim-vinegar'
 Plugin 'davidhalter/jedi-vim'
 "Plugin 'xuhdev/vim-latex-live-preview'
 "Plugin 'lervag/vimtex'
-Plugin 'vim-latex/vim-latex'
+"Plugin 'vim-latex/vim-latex'
 
 call vundle#end()
 
@@ -32,7 +32,7 @@ let mapleader = ','
 set statusline=\ %f\ Line:%l/%L\ (%p%%)\ Col:%v\ Buf:#%n%m%r%h%w\ 
   \%=%({%{&ff}\|%{(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ 
   \&bomb)?\",B\":\"\")}%k\|%Y}%)\ %([%l,%v][%p%%]\ %)
-set statusline+=%#warningmsg#
+"set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 "let g:syntastic_always_populate_loc_list = 1
