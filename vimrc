@@ -63,9 +63,9 @@ set hlsearch
 if exists('+colorcolumn')
   highligh OverLength ctermbg=red ctermfg=white
   "match OverLength /\%81v.\+/
-  match OverLength /\%81v/
+  match OverLength /\%121v/
   "highlight ColorColumn ctermbg=red
-	set colorcolumn=80
+	set colorcolumn=120
 endif
 set background=dark
 " Enable folding
