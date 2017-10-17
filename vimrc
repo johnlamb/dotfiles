@@ -4,9 +4,10 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-vinegar'
-"Plugin 'vim-syntastic/syntastic'
+Plugin 'vim-syntastic/syntastic'
 "Plugin 'tpope/vim-fugitive'
 Plugin 'davidhalter/jedi-vim'
+"Plugin 'nvie/vim-flake8'
 "Plugin 'xuhdev/vim-latex-live-preview'
 "Plugin 'lervag/vimtex'
 "Plugin 'vim-latex/vim-latex'
@@ -32,13 +33,13 @@ let mapleader = ','
 set statusline=\ %f\ Line:%l/%L\ (%p%%)\ Col:%v\ Buf:#%n%m%r%h%w\ 
   \%=%({%{&ff}\|%{(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ 
   \&bomb)?\",B\":\"\")}%k\|%Y}%)\ %([%l,%v][%p%%]\ %)
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 let g:jedi#smart_auto_mappings = 0
 let g:jedi#popup_on_dot = 0
 let g:jedi#show_call_signatures = 0
@@ -84,4 +85,6 @@ au BufNewFile, BufRead *.py
     \ set smarttab
     \ set autoindent
     \ set fileformat=unix
+au BufNewFile,BufRead Snakefile set syntax=snakemake
+au BufNewFile,BufRead *.smk set syntax=snakemake
 map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR> 

@@ -15,8 +15,9 @@ HISTFILESIZE=2000
 shopt -s checkwinsize
 shopt -s autocd
  if [ "$(uname)" == "Darwin" ]; then
-	 alias ls="ls -G"
-	export CLICOLOR=1
+   test -r ~/.dircolors && eval "$(gdircolors -b ~/.dircolors)" || eval "$(gdircolors -b)"
+	 alias ls="gls -N --color=auto"
+	 # export CLICOLOR=1
 
 else
 # enable color support of ls and also add handy aliases
