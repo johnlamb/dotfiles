@@ -47,8 +47,9 @@ syntax enable
 set autoindent
 set smartindent
 set expandtab
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set backspace=2
 set laststatus=2
 set encoding=utf-8
@@ -76,14 +77,8 @@ set background=dark
 "nnoremap <space> za
 " PEP8
 au BufNewFile, BufRead *.py
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set textwidth=80
-    \ set expandtab
-    \ set smartindent
+    \ set textwidth=120
     \ set smarttab
-    \ set autoindent
     \ set fileformat=unix
 au BufNewFile,BufRead Snakefile set syntax=snakemake
 au BufNewFile,BufRead *.smk set syntax=snakemake
