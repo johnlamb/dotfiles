@@ -1,5 +1,8 @@
 ## Set up color for the PS1 prompt
 ## Text color variables
+if [ -z "$PS1" ]; then
+return
+else
 RED="\[\033[0;31m\]"
 GREEN="\[\033[0;32m\]"
 YELLOW="\[\033[0;33m\]"
@@ -17,6 +20,7 @@ LCYAN="\[\033[0;96m\]"
 WHITE="\[\033[0;97m\]"
 RESET="\[\033[0m\]"
 BOLD="\[\033[1m\]"
+fi
 
 ## Set up the prompt, nice colors and git integration (see functions at end of file)
 export CLICOLOR=1
