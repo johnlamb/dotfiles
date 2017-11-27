@@ -1,3 +1,5 @@
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 ## Set up color for the PS1 prompt
 ## Text color variables
 if [ -z "$PS1" ]; then
