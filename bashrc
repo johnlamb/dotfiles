@@ -25,7 +25,7 @@ BOLD="\[\033[1m\]"
 fi
 
 ## Set up the prompt, nice colors and git integration (see functions at end of file)
-export CLICOLOR=1
+# export CLICOLOR=1
 export PS1="${RED}[${YELLOW}\u${GREEN}@${BLUE}\h ${MAGENTA}\W${RED}]\[\$(git_color)\]\$(git_branch)${WHITE}$ ${RESET}"
 
 ## General settings
@@ -40,6 +40,8 @@ shopt -s autocd
 ## My own aliases
 # alias sshalok="ssh -R 52698:localhost:52698 -L 8888:localhost:8888 johnlamb@alok.scilifelab.se"
 alias sshalok="ssh johnlamb@alok.scilifelab.se -t tmux a"
+alias ls="gls --color=auto"
+test -r ~/.dircolors && eval "$(gdircolors ~/.dircolors)"
 test -r ~/.virtualenvs && export WORKON_HOME=~/.virtualenvs && source /usr/local/bin/virtualenvwrapper.sh
 
 ## base16 helper functions

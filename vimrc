@@ -1,6 +1,7 @@
 call plug#begin('~/.vim/plugged')
 Plug 'vim-syntastic/syntastic'
 Plug 'davidhalter/jedi-vim'
+Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 call plug#end()
 set nocompatible
 filetype plugin indent on
@@ -47,10 +48,11 @@ set shiftwidth=4
 set backspace=2
 set laststatus=2
 set encoding=utf-8
-set textwidth=120
+set textwidth=90
 set nu
 set relativenumber
 set wildmenu
+set cursorline
 
 " Don't offer to open certain files/directories
 set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png,*.ico
@@ -60,11 +62,11 @@ set so=10
 set hlsearch
 
 if exists('+colorcolumn')
-  highligh OverLength ctermbg=red ctermfg=white
-  "match OverLength /\%81v.\+/
-  match OverLength /\%101v/
-  " highlight ColorColumn ctermbg=red
-	set colorcolumn=100
+    highligh OverLength ctermbg=red ctermfg=white
+    "match OverLength /\%81v.\+/
+    match OverLength /\%81v/
+    " highlight ColorColumn ctermbg=red
+    let &colorcolumn=join(range(91, 999),",")
 endif
 
 " Enable folding
