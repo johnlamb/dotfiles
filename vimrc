@@ -37,7 +37,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checker_args='--ignore=D100'
+let g:syntastic_python_checker_args='--ignore=D100,E501'
 
 set autoindent
 set smartindent
@@ -48,7 +48,7 @@ set shiftwidth=4
 set backspace=2
 set laststatus=2
 set encoding=utf-8
-set textwidth=90
+" set textwidth=90
 set nu
 set relativenumber
 set wildmenu
@@ -64,7 +64,7 @@ set hlsearch
 if exists('+colorcolumn')
     highligh OverLength ctermbg=red ctermfg=white
     "match OverLength /\%81v.\+/
-    match OverLength /\%81v/
+    match OverLength /\%91v/
     " highlight ColorColumn ctermbg=red
     let &colorcolumn=join(range(91, 999),",")
 endif

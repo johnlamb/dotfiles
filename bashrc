@@ -40,8 +40,17 @@ shopt -s autocd
 ## My own aliases
 # alias sshalok="ssh -R 52698:localhost:52698 -L 8888:localhost:8888 johnlamb@alok.scilifelab.se"
 alias sshalok="ssh johnlamb@alok.scilifelab.se -t tmux a"
-alias ls="gls --color=auto"
-test -r ~/.dircolors && eval "$(gdircolors ~/.dircolors)"
+if [ "$(uname)" == "Darwin" ]; then
+    alias ls="gls --color=auto"
+else
+    alias ls="ls --color=auto"
+fi
+if [ "$(uname)" == "Darwin" ]; then
+    test -r ~/.dircolors && eval "$(gdircolors ~/.dircolors)"
+else
+    test -r ~/.dircolors && eval "$(dircolors ~/.dircolors)"
+fi
+
 test -r ~/.virtualenvs && export WORKON_HOME=~/.virtualenvs && source /usr/local/bin/virtualenvwrapper.sh
 
 ## base16 helper functions
