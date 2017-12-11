@@ -40,6 +40,8 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checker_args='--ignore=D100,E501'
 
+let g:vimwiki_list = [{'path': '$HOME/Dropbox/vimwiki'}]
+
 set autoindent
 set smartindent
 set expandtab
