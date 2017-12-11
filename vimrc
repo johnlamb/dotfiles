@@ -49,9 +49,9 @@ let g:calendar_monday = 1
 set autoindent
 set smartindent
 set expandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+"set softtabstop=4
+set shiftwidth=2
 set backspace=2
 set laststatus=2
 set encoding=utf-8
@@ -81,7 +81,7 @@ set foldmethod=indent
 set foldlevel=99
 " Enable folding with the spacebar
 "nnoremap <space> za
-
+autocmd FileType *.py set sw=4 ts=4 
 au BufNewFile,BufRead Snakefile set syntax=snakemake
 au BufNewFile,BufRead *.smk set syntax=snakemake
 
