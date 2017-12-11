@@ -2,6 +2,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-syntastic/syntastic'
 Plug 'davidhalter/jedi-vim'
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
+Plug 'mattn/calendar-vim'
 call plug#end()
 set nocompatible
 filetype plugin indent on
