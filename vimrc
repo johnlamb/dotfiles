@@ -42,6 +42,10 @@ let g:syntastic_python_checker_args='--ignore=D100,E501'
 
 let g:vimwiki_list = [{'path': '$HOME/Dropbox/vimwiki'}]
 
+let g:calendar_mark = 'left-fit'
+let g:calendar_monday = 1
+
+
 set autoindent
 set smartindent
 set expandtab
