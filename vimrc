@@ -39,7 +39,9 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args='--ignore=D100,W503'
-
+let g:syntastic_cpp_checkers = ['gcc']
+let g:syntastic_cpp_compiler = 'gcc'
+let g:syntastic_c_compiler_options = '-ansi -Wall -Wextra -Wpedantic'
 let g:vimwiki_list = [{'path': '$HOME/Dropbox/vimwiki'}]
 
 let g:calendar_mark = 'left-fit'
