@@ -23,7 +23,6 @@ nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc>
 
 set splitright
 set splitbelow
-
 let mapleader = ','
 
 set statusline=\ %f\ Line:%l/%L\ (%p%%)\ Col:%v\ Buf:#%n%m%r%h%w\ 
@@ -38,7 +37,8 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checker_args='--ignore=D100,E501'
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_flake8_args='--ignore=D100,W503'
 
 let g:vimwiki_list = [{'path': '$HOME/Dropbox/vimwiki'}]
 
@@ -71,9 +71,9 @@ set hlsearch
 if exists('+colorcolumn')
     highligh OverLength ctermbg=red ctermfg=white
     "match OverLength /\%81v.\+/
-    match OverLength /\%91v/
+    match OverLength /\%80v/
     " highlight ColorColumn ctermbg=red
-    let &colorcolumn=join(range(91, 999),",")
+    let &colorcolumn=join(range(80, 999),",")
 endif
 
 " Enable folding
@@ -81,7 +81,7 @@ set foldmethod=indent
 set foldlevel=99
 " Enable folding with the spacebar
 "nnoremap <space> za
-autocmd FileType *.py set sw=4 ts=4 
+autocmd FileType *.py set sw=4 ts=4 tw=80
 au BufNewFile,BufRead Snakefile set syntax=snakemake
 au BufNewFile,BufRead *.smk set syntax=snakemake
 
