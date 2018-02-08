@@ -1,5 +1,6 @@
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+set -o vi
 ## Set up color for the PS1 prompt
 ## Text color variables
 if [ -z "$PS1" ]; then
@@ -52,7 +53,7 @@ else
 fi
 
 test -r ~/.virtualenvs && export WORKON_HOME=~/.virtualenvs && source /usr/local/bin/virtualenvwrapper.sh
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+## test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
 ## base16 helper functions
 BASE16_SHELL=$HOME/.config/base16-shell/
