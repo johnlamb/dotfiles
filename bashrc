@@ -52,6 +52,7 @@ else
     test -r ~/.virtualenvs && export WORKON_HOME=~/.virtualenvs && source ~/.local/bin/virtualenvwrapper.sh
 fi
 
+test -d "${HOME}/projects/biolamb-toolbox" && export PYTHONPATH=$HOME/projects/biolamb-toolbox:$PYTHONPATH
 ## test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
 ## base16 helper functions
