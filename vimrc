@@ -4,6 +4,7 @@ Plug 'vim-syntastic/syntastic'
 Plug 'davidhalter/jedi-vim'
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 Plug 'mattn/calendar-vim'
+Plug 'jgdavey/tslime.vim'
 " if has('nvim')
   " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " else
@@ -53,6 +54,12 @@ set statusline+=%*
 if has('nvim')
     let g:jedi#force_py_version=3
 endif
+
+let g:tslime_always_current_session = 1
+let g:tslime_always_current_window = 1
+
+vmap  <Leader>t <Plug>SendSelectionToTmux
+nmap  <Leader>t <Plug>NormalModeSendToTmux
 
 " let g:deoplete#enable_at_startup = 1
 let g:syntastic_always_populate_loc_list = 0
