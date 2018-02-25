@@ -28,6 +28,7 @@ fi
 ## Set up the prompt, nice colors and git integration (see functions at end of file)
 # export CLICOLOR=1
 export PS1="${RED}[${YELLOW}\u${GREEN}@${BLUE}\h ${MAGENTA}\W${RED}]\[\$(git_color)\]\$(git_branch)${WHITE}$ ${RESET}"
+export MANPAGER="nvim -c 'set ft=man' -"
 
 ## General settings
 HISTCONTROL=ignoreboth
