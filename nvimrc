@@ -6,12 +6,13 @@ filetype plugin indent on
 set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 call dein#begin(expand('~/.vim/dein'))
 
-call dein#add('Shougo/dein.vim')        " Handle plugins
-call dein#add('Shougo/deoplete.nvim')   " Autocomplete enginee
-call dein#add('zchee/deoplete-jedi')    " Autocomplete for python
-call dein#add('neomake/neomake')        " Automake, used for linting
-call dein#add('vimwiki/vimwiki')        " Vimwiki for knowledge
-call dein#add('jpalardy/vim-slime')     " Slime to send to terminal
+call dein#add('Shougo/dein.vim')          " Handle plugins
+call dein#add('Shougo/deoplete.nvim')     " Autocomplete enginee
+call dein#add('zchee/deoplete-jedi')      " Autocomplete for python
+call dein#add('neomake/neomake')          " Automake, used for linting
+call dein#add('vimwiki/vimwiki')          " Vimwiki for knowledge
+call dein#add('jpalardy/vim-slime')       " Slime to send to terminal
+call dein#add('chriskempson/base16-vim')  " base16 themes
 
 call dein#end()
 
@@ -106,8 +107,8 @@ tnoremap <M-k> <c-\><c-n><C-w><C-k>
 tnoremap <M-l> <c-\><c-n><C-w><C-l>
 tnoremap <M-h> <c-\><c-n><C-w><C-h>
 
-nnoremap <M-a>% :vsp term://bash<CR>
-nnoremap <M-a>" :sp term://bash<CR>
+nnoremap <M-a>v :vsp term://bash<CR>
+nnoremap <M-a>h :sp term://bash<CR>
 " Statusline
 set statusline=\ %<%.99f\ %h%w%m%r%y%=\ %l,%-3c\ %P
 

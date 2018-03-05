@@ -43,23 +43,22 @@ shopt -s autocd
 # alias sshalok="ssh -R 52698:localhost:52698 -L 8888:localhost:8888 johnlamb@alok.scilifelab.se"
 alias sshalok="ssh johnlamb@alok.scilifelab.se -t tmux a"
 if [ "$(uname)" == "Darwin" ]; then
-    alias ls="gls --color=auto"
+    PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
     test -r ~/.virtualenvs && export WORKON_HOME=~/.virtualenvs && source /usr/local/bin/virtualenvwrapper.sh
-    test -r ~/.dircolors && eval "$(gdircolors ~/.dircolors)"
 else
-    alias ls="ls --color=auto"
-    test -r ~/.dircolors && eval "$(dircolors ~/.dircolors)"
     export VIRTUALENVWRAPPER_PYTHON=`which python3`
     test -r ~/.virtualenvs && export WORKON_HOME=~/.virtualenvs && source ~/.local/bin/virtualenvwrapper.sh
 fi
 
+alias ls="ls --color=auto"
+test -r ~/.dircolors && eval "$(dircolors ~/.dircolors)"
 test -d "${HOME}/projects/biolamb-toolbox" && export PYTHONPATH=$HOME/projects/biolamb-toolbox:$PYTHONPATH
 ## test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
-## base16 helper functions
-BASE16_SHELL=$HOME/.config/base16-shell/
-[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
-## Special functions, git integrations for PS1
+# base16 helper functions
+ BASE16_SHELL=$HOME/.config/base16-shell/
+ [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+# Special functions, git integrations for PS1
 function git_branch () {
     if git rev-parse --git-dir >/dev/null 2>&1
         then echo -e "" [$(git branch 2>/dev/null| sed -n '/^\*/s/^\* //p')]
