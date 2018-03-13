@@ -75,7 +75,7 @@ autocmd FileType python set colorcolumn=80
 
 autocmd BufEnter term://* startinsert
 autocmd TermOpen * setlocal statusline=\ Term\ Job\ ID:\ %{b:terminal_job_id}%=\ %l,%-3c\ %P
-
+autocmd TermOpen * setlocal nonumber norelativenumber
 " Remaps
 let mapleader = ','
 tnoremap <Esc> <C-\><C-n>
