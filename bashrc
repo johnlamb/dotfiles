@@ -52,7 +52,7 @@ fi
 
 alias ls="ls --color=auto"
 test -r ~/.dircolors && eval "$(dircolors ~/.dircolors)"
-test -d "${HOME}/projects/biolamb-toolbox" && export PYTHONPATH=$HOME/projects/biolamb-toolbox:$PYTHONPATH
+test -d "${HOME}/projects/biolamb-toolbox" && export PYTHONPATH=$HOME/projects/biolamb-toolbox:$PYTHONPATH && export PATH=$HOME/projects/biolamb-toolbox:$PATH
 ## test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
 # base16 helper functions

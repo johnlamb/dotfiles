@@ -19,7 +19,6 @@ call dein#end()
 " Plugin specific settings
 " Run neomake on entering normal mode, write and read after a 500ms delay
 call neomake#configure#automake('nwri', 500)
-
 let g:deoplete#enable_at_startup = 1
 let g:neomake_python_enabled_makers = ['flake8', 'python']
 let g:slime_target = "neovim"
