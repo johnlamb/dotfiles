@@ -7,8 +7,9 @@ set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 call dein#begin(expand('~/.vim/dein'))
 
 call dein#add('Shougo/dein.vim')          " Handle plugins
-call dein#add('Shougo/deoplete.nvim')     " Autocomplete enginee
-call dein#add('zchee/deoplete-jedi')      " Autocomplete for python
+" call dein#add('Shougo/deoplete.nvim')     " Autocomplete enginee
+" call dein#add('zchee/deoplete-jedi')      " Autocomplete for python
+call dein#add('roxma/nvim-completion-manager')  " Autocomplete
 call dein#add('neomake/neomake')          " Automake, used for linting
 call dein#add('vimwiki/vimwiki')          " Vimwiki for knowledge
 call dein#add('jpalardy/vim-slime')       " Slime to send to terminal
@@ -20,11 +21,17 @@ call dein#end()
 " Run neomake on entering normal mode, write and read after a 500ms delay
 call neomake#configure#automake('nwri', 500)
 
-let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_at_startup = 1
+" let g:deoplete#sources#jedi#server_timeout = 20
+" let g:deoplete#sources#jedi#show_docstring = 1
+let g:cm_completeopt = 'menu,menuone,noinsert,noselect,preview'
 let g:neomake_python_enabled_makers = ['flake8', 'python']
 let g:slime_target = "neovim"
 let g:vimwiki_list = [{'path': '$HOME/Dropbox/vimwiki'}]
 
+augroup ncm_preview
+  autocmd! InsertLeave <buffer> if pumvisible() == 0|pclose|endif
+augroup END
 " Needed for truecolor support
 set termguicolors
 
