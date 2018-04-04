@@ -10,6 +10,7 @@ call dein#add('Shougo/dein.vim')          " Handle plugins
 " call dein#add('Shougo/deoplete.nvim')     " Autocomplete enginee
 " call dein#add('zchee/deoplete-jedi')      " Autocomplete for python
 call dein#add('roxma/nvim-completion-manager')  " Autocomplete
+call dein#add('davidhalter/jedi-vim')     " Jedi extra features
 call dein#add('neomake/neomake')          " Automake, used for linting
 call dein#add('vimwiki/vimwiki')          " Vimwiki for knowledge
 call dein#add('jpalardy/vim-slime')       " Slime to send to terminal
@@ -25,6 +26,7 @@ call neomake#configure#automake('nwri', 500)
 " let g:deoplete#sources#jedi#server_timeout = 20
 " let g:deoplete#sources#jedi#show_docstring = 1
 let g:cm_completeopt = 'menu,menuone,noinsert,noselect,preview'
+let g:jedi#completions_enabled = 0      " DO NOT use jedi-vims autocomplete, use NCM.
 let g:neomake_python_enabled_makers = ['flake8', 'python']
 let g:slime_target = "neovim"
 let g:vimwiki_list = [{'path': '$HOME/Dropbox/vimwiki'}]
@@ -78,6 +80,7 @@ autocmd FileType python set sw=4 ts=4 sts=4 tw=80
 autocmd FileType python highligh OverLength ctermbg=red ctermfg=white guibg=#993737
 autocmd FileType python match OverLength /\%80v/
 autocmd FileType python set colorcolumn=80
+autocmd FileType python nnoremap K :exec "!pydoc" expand("<cword>")<CR>
 " autocmd FileType python let &colorcolumn=join(range(80, 999),",")
 
 autocmd BufEnter term://* startinsert
