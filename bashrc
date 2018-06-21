@@ -46,6 +46,7 @@ if [ "$(uname)" == "Darwin" ]; then
     PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
     test -r ~/.virtualenvs && export WORKON_HOME=~/.virtualenvs && source /usr/local/bin/virtualenvwrapper.sh
 else
+    PATH="~/bin:$PATH"
     export VIRTUALENVWRAPPER_PYTHON=`which python3`
     test -r ~/.virtualenvs && export WORKON_HOME=~/.virtualenvs && source ~/.local/bin/virtualenvwrapper.sh
 fi
