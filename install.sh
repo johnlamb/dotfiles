@@ -17,6 +17,5 @@ fi
 # Always symlink .bashrc
 ln -sf $dir/bashrc ~/.bashrc
 
-ln -sf $dir/vimrc ~/.vimrc
 ln -sf $dir/nvimrc ~/.config/nvim/init.vim
 ln -sf $dir/tmux.conf ~/.tmux.conf
