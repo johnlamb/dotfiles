@@ -5,13 +5,22 @@ set nocompatible
 " Plugins
 set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 call dein#begin(expand('~/.vim/dein'))
-    call dein#add('Shougo/dein.vim')          " Handle plugins
-    call dein#add('chriskempson/base16-vim')  " base16 themes
-    call dein#add('Valloric/YouCompleteMe')   " YCM completion
-    call dein#add('neomake/neomake')          " Automake, used for linting
+    call dein#add('Shougo/dein.vim')            " Handle plugins
+    call dein#add('chriskempson/base16-vim')    " base16 themes
+    call dein#add('Shougo/deoplete.nvim')       " Autocompletion
+    call dein#add('zchee/deoplete-jedi')        " Python autocomplete
+    call dein#add('Shougo/deoplete-clangx')     " C/C++ autocomplete
+    call dein#add('Shougo/neoinclude.vim')      " C/C++ includes
+    " call dein#add('tweekmonster/deoplete-clang2')        " C/C++ autocomplete
+    call dein#add('neomake/neomake')            " Automake, used for linting
+    " call dein#add('vim-airline/vim-airline')   	" Airline
+    " call dein#add('vim-airline/vim-airline-themes')   	" Airline themes
 call dein#end()
 
 filetype plugin indent on
+
+let g:neoinclude#paths = {}
+let g:neoinclude#paths.cpp = 'include'
 
 " Color
 if filereadable(expand("~/.vimrc_background"))
@@ -19,18 +28,23 @@ if filereadable(expand("~/.vimrc_background"))
 endif
 set termguicolors
 syntax enable
+highlight Comment cterm=italic
+set guicursor+=n-v-c:blinkon1
 
-" YCM settings
-let g:ycm_global_ycm_extra_conf = '~/.config/nvim/.ycm_extra_conf.py'
-let g:ycm_python_binary_path = 'python3'
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_show_diagnostics_ui = 0   " Let neomake handle linting
+" Deoplete settings
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#jedi#server_timeout = 20
+let g:deoplete#sources#jedi#python_path = 'python3'
 
 " Neomake settings
 call neomake#configure#automake('nwri', 500)
-let g:neomake_python_enabled_makers = ['flake8', 'python']
-let g:neomake_c_enabled_makers = ['clang']
-let g:neomake_c_clang_args = ["-ansi", "-Wextra", "-Wall", "-Wpedantic"] 
+" let g:neomake_python_enabled_makers = ['flake8', 'python']
+" let g:neomake_c_enabled_makers = ['clang']
+" let g:neomake_c_clang_args = ["-ansi", "-Wextra", "-Wall", "-Wpedantic"] 
+let g:neomake_cpp_enabled_makers = ['clang']
+let g:neomake_cpp_clang_args = ["-Iinclude", "-std=c++11", "-Wextra", "-Wall", "-Wpedantic"] 
+
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " Global settings
 set clipboard+=unnamedplus
@@ -53,9 +67,10 @@ set so=10
 set hlsearch
 set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png,*.ico
 set wildignore+=*.pdf,*.psd
+set tags=tags
 
 " Enable folding, on indent and using space
-set foldmethod=indent
+set foldmethod=manual
 set foldlevel=99
 nnoremap <space> za
 
@@ -105,4 +120,4 @@ autocmd TermOpen * setlocal statusline=\ Term\ Job\ ID:\ %{b:terminal_job_id}%=\
 autocmd TermOpen * setlocal nonumber norelativenumber
 "
 " Statusline
-set statusline=\ %<%.99f\ %h%w%m%r%y%=\ %l,%-3c\ %P
+" set statusline=\ %<%.99f\ %h%w%m%r%y%=\ %l,%-3c\ %P

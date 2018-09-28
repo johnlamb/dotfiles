@@ -42,7 +42,7 @@ let base16colorspace=256
 if filereadable(expand("~/.vimrc_background"))
   source ~/.vimrc_background
 endif
-
+highlight Comment cterm=italic
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
