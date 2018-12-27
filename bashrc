@@ -1,6 +1,7 @@
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-PATH="~/bin/:/usr/local/opt/make/libexec/gnubin:$PATH"
+PATH="~/.cargo/bin:~/bin/:/usr/local/opt/make/libexec/gnubin:$PATH"
+export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 # set -o vi
 ## Set up color for the PS1 prompt
 ## Text color variables
@@ -63,7 +64,16 @@ test -d "${HOME}/projects/biolamb-toolbox" && export PYTHONPATH=$HOME/projects/b
 # Special functions, git integrations for PS1
 function git_branch () {
     if git rev-parse --git-dir >/dev/null 2>&1
-        then echo -e "" [$(git branch 2>/dev/null| sed -n '/^\*/s/^\* //p')]
+       #  then if git branch 2>/dev/null
+       #          then
+       #              echo ""
+       #          else
+   then if $(git branch 2>/dev/null| sed -n '/^\*/s/^\* //p') 2> /dev/null
+           then
+               echo ""
+            else
+               echo -e "" [$(git branch 2>/dev/null| sed -n '/^\*/s/^\* //p')]
+           fi
     else
         echo ""
     fi

@@ -7,20 +7,22 @@ set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 call dein#begin(expand('~/.vim/dein'))
     call dein#add('Shougo/dein.vim')            " Handle plugins
     call dein#add('chriskempson/base16-vim')    " base16 themes
+    call dein#add('rust-lang/rust.vim')
     call dein#add('Shougo/deoplete.nvim')       " Autocompletion
+    call dein#add('racer-rust/vim-racer')
     " call dein#add('zchee/deoplete-jedi')        " Python autocomplete
-    call dein#add('Shougo/deoplete-clangx')     " C/C++ autocomplete
-    call dein#add('Shougo/neoinclude.vim')      " C/C++ includes
+    " call dein#add('Shougo/deoplete-clangx')     " C/C++ autocomplete
+    " call dein#add('Shougo/neoinclude.vim')      " C/C++ includes
     " call dein#add('tweekmonster/deoplete-clang2')        " C/C++ autocomplete
     call dein#add('neomake/neomake')            " Automake, used for linting
-    call dein#add('octol/vim-cpp-enhanced-highlight')      " Enhanced highlight
+    " call dein#add('octol/vim-cpp-enhanced-highlight')      " Enhanced highlight
     "
     " call dein#add('vim-airline/vim-airline')   	" Airline
     " call dein#add('vim-airline/vim-airline-themes')   	" Airline themes
 call dein#end()
 
 filetype plugin indent on
-set path+=include,src
+" set path+=include,src
 
 " Color
 if filereadable(expand("~/.vimrc_background"))
@@ -28,27 +30,37 @@ if filereadable(expand("~/.vimrc_background"))
 endif
 syntax enable
 highlight Comment cterm=italic
+highlight Comment gui=italic
 set termguicolors
 set guicursor+=n-v-c:blinkon1
 
+set hidden
+let g:racer_cmd = "~/.cargo/bin/racer"
+let g:racer_experimental_completer = 1
+
+au FileType rust nmap gd <Plug>(rust-def)
+au FileType rust nmap gs <Plug>(rust-def-split)
+au FileType rust nmap gx <Plug>(rust-def-vertical)
+au FileType rust nmap <leader>gd <Plug>(rust-doc)
+
 " Deoplete settings
 let g:deoplete#enable_at_startup = 1
-" let g:deoplete#file#enable_buffer_path=1
-let g:deoplete#sources#jedi#server_timeout = 20
-let g:deoplete#sources#jedi#python_path = 'python3'
+let g:deoplete#file#enable_buffer_path=1
+" let g:deoplete#sources#jedi#server_timeout = 20
+" let g:deoplete#sources#jedi#python_path = 'python3'
 
 " Neomake settings
 call neomake#configure#automake('nwri', 500)
 let g:neomake_python_enabled_makers = ['flake8', 'python']
 " let g:neomake_c_enabled_makers = ['clang']
 " let g:neomake_c_clang_args = ["-ansi", "-Wextra", "-Wall", "-Wpedantic"] 
-let g:neomake_cpp_enabled_makers = ['clang']
-let g:neomake_cpp_clang_args = ["-Iinclude", "-std=c++11", "-Wextra", "-Wall", "-Wpedantic"] 
+" let g:neomake_cpp_enabled_makers = ['clang']
+" let g:neomake_cpp_clang_args = ["-Iinclude", "-std=c++11", "-Wextra", "-Wall", "-Wpedantic"] 
 
 " Extra cpp syntax highlight
-let g:cpp_class_scope_highlight = 1
-let g:cpp_member_variable_highlight = 1
-let g:cpp_class_decl_highlight = 1
+" let g:cpp_class_scope_highlight = 1
+" let g:cpp_member_variable_highlight = 1
+" let g:cpp_class_decl_highlight = 1
 
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
